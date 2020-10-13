@@ -3,13 +3,13 @@
 int multiply(int **A, int **B, int nRowA, int nColA, int nRowB, int nColB)
 {
     int aux;
-    if (nColA != nColB)
+    if (nColA != nRowB)
     {
-        return 1;
         printf("\n\n Incompatible dimensions for matrix multiplication\n\n");
+        return 1;
     }
         
-    printf("\n\n Matrix multiplication : \n\n");
+    printf("\n\nMatrix multiplication : \n");
 
     for (int i = 0; i < nRowA; i++)
     {

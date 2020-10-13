@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-void print(int **A, int nRows, int nCols)
+void print_matrix(int **A, int nRows, int nCols)
 {
     for (int i = 0; i < nRows; i++)
     {

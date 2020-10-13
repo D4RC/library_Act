@@ -7,14 +7,12 @@
 #define B_ROWS 2
 #define B_COLS 4
 
-void main()
+int main()
 {
     int **A = (int**)malloc(sizeof(int)*A_ROWS);
     int **B = (int**)malloc(sizeof(int)*B_ROWS);
-
-
+    
     printf("A Matrix:\n");
-    // A initialization
     for (size_t i = 0; i < A_ROWS; i++)
     {
         *(A+i) = malloc(sizeof(int)*A_COLS);
@@ -23,14 +21,12 @@ void main()
         {
             *(*(A+i)+j) = i+j;
         } 
-        printf("\n");
     }
 
     print_matrix(A, A_ROWS, A_COLS);
     sum_rows_and_cols(A,A_ROWS,A_COLS);
 
     printf("\n\nB Matrix:\n");
-    // B initialization
     for (size_t i = 0; i < B_ROWS; i++)
     {
         *(B+i) = malloc(sizeof(int)*B_COLS);
@@ -45,16 +41,15 @@ void main()
 
     for (size_t i = 0; i < A_ROWS; i++)
     {
-        free(A+i);
+        int *tp = A[i];
+        free(tp);
     }
 
     for (size_t i = 0; i < B_ROWS; i++)
     {
-        free(B+i);
+        int *tp = B[i];
+        free(tp);
     }
-
-    free(A);
-    free(B);    
 }
 
 
